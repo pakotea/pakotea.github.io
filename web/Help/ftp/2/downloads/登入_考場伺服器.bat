@@ -1,0 +1,1 @@
+cmdkey /generic:192.168.240.200 /user:administrator /pass: && mstsc /admin /v:192.168.1.15

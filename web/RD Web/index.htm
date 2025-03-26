@@ -1,0 +1,237 @@
+<title>RD Web演示用</title>
+<style>
+    .text-on-image {
+        background-image: url('image/RD Web.jpg'); /* 設定背景圖 */
+        background-size: cover; /* 背景圖覆蓋容器 */
+        background-position: center; /* 圖片居中 */
+        width: 100.25%; 
+        height: 100%; 
+        display: flex; /* 使用 Flexbox 進行對齊 */
+        
+    }
+    .text-overlay {
+        position: absolute;
+        bottom: 520px; /* 距離底部 20px */
+        left: 800px; /* 距離左邊 20px */
+    }
+    body {
+            background-color: #7FA4BF;
+        }
+</style>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../Site.xsl"?>
+<?xml-stylesheet type="text/css" href="../RenderFail.css"?>
+
+<RDWAPage 
+    helpurl="http://go.microsoft.com/fwlink/?LinkId=141038" 
+    workspacename="&#24037;&#20316;&#36039;&#28304;" 
+    baseurl="http://192.168.240.200/RDWeb/Pages/zh-tw/"
+    >
+<!--  <RenderFailureMessage>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=unicode"/>
+            <title>錯誤: 無法顯示 RD Web 存取</title>
+        </head>
+        <body>
+            <h1>錯誤: 無法顯示 RD Web 存取</h1>
+            <p>發生意外錯誤，因而無法正確顯示此頁面。</p>
+            <p>在已啟用增強式安全性設定的 Internet Explorer 中檢視此頁面，可能會導致此種錯誤。</p>
+            <p>請嘗試在未啟用增強式安全性設定的情況下載入此頁面。如果此錯誤繼續顯示，請連絡系統管理員。</p>
+        </body>
+    </html> 
+  </RenderFailureMessage>
+-->
+  <HTMLMainContent>
+    <div class="text-on-image">
+        <div class="text-overlay">
+      <form id="FrmLogin" name="FrmLogin" action="../index.htm" method="post">
+
+        <table width="350" border="0" align="center" cellpadding="0" cellspacing="0">
+
+            <tr>
+            <td height="20">&#160;</td>
+            </tr>
+
+            <tr>
+            <td>
+                <table width="350" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width="180" align="right">網域\使用者名稱:</td>
+                    <td width="7"></td>
+                    <td align="right">
+                    <input name="DomainUserName" type="text" id="DomainUserName" class="textInputField" size="25" autocomplete="off" />
+                    </td>
+                </tr>
+                </table>
+            </td>
+            </tr>
+
+            <tr>
+            <td height="7"></td>
+            </tr>
+
+            <tr>
+            <td>
+                <table width="350" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width="180" align="right">目前密碼:</td>
+                    <td width="7"></td>
+                    <td align="right">
+                    <input name="UserPass" type="password" id="UserPass" class="textInputField" size="25" autocomplete="off" />
+                    </td>
+                </tr>
+                </table>
+            </td>
+            </tr>
+
+            <tr>
+            <td height="7"></td>
+            </tr>
+
+            <tr>
+            <td>
+                <table width="350" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width="180" align="right">新密碼:</td>
+                    <td width="7"></td>
+                    <td align="right">
+                    <input name="NewUserPass" type="password" id="NewUserPass" class="textInputField" size="25" autocomplete="off" />
+                    </td>
+                </tr>
+                </table>
+            </td>
+            </tr>
+            
+            <tr>
+            <td height="7"></td>
+            </tr>
+
+            <tr>
+            <td>
+                <table width="350" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width="180" align="right">確認新密碼:</td>
+                    <td width="7"></td>
+                    <td align="right">
+                    <input name="ConfirmNewUserPass" type="password" id="ConfirmNewUserPass" class="textInputField" size="25" autocomplete="off" />
+                    </td>
+                </tr>
+                </table>
+            </td>
+            </tr>
+            
+    
+            <tr id="tr4" style="display:none" >
+            <td>
+                <table>
+                <tr>
+                    <td height="20">&#160;</td>
+                </tr>
+                <tr>
+                    <td><span class="wrng">您的密碼無法變更。請連絡系統管理員以尋求協助。</span></td>
+                </tr>
+                </table>
+            </td>
+            </tr>
+
+    
+            <tr id="tr2" style="display:none" >
+            <td>
+                <table>
+                <tr>
+                    <td height="20">&#160;</td>
+                </tr>
+                <tr>
+                    <td><span class="wrng">請輸入新密碼。</span></td>
+                </tr>
+                </table>
+            </td>
+            </tr>
+
+    
+            <tr id="tr5" style="display:none" >
+            <td>
+                <table>
+                <tr>
+                    <td height="20">&#160;</td>
+                </tr>
+                <tr>
+                    <td><span class="wrng">您的新密碼不符合網域的長度、複雜性或歷程記錄需求。請嘗試選擇其他新密碼。</span></td>
+                </tr>
+                </table>
+            </td>
+            </tr>
+    
+    
+            <tr id="tr3" style="display:none" >
+            <td>
+                <table>
+                <tr>
+                    <td height="20">&#160;</td>
+                </tr>
+                <tr>
+                    <td><span class="wrng">輸入的密碼不相符。</span></td>
+                </tr>
+                </table>
+            </td>
+            </tr>
+
+    
+            <tr id="tr1" style="display:none" >
+            <td>
+                <table align = "center">
+                <tr>
+                    <td height="20">&#160;</td>
+                </tr>
+                <tr>
+                    <td><span class="wrng">您的密碼已成功變更。</span></td>
+                </tr>
+                <tr>
+                    <td height="10">&#160;</td>
+                </tr>
+                <tr>
+                    <td align = "center"><input type="button" class="formButton" id="OK" value="確定" onClick="window.location='login.aspx'"/></td>
+                </tr>  
+
+                </table>
+            </td>
+            </tr>
+
+    
+            <tr id="trErrorIncorrectCredentials" style="display:none" >
+            <td>
+                <table>
+                <tr>
+                    <td height="20">&#160;</td>
+                </tr>
+                <tr>
+                    <td><span class="wrng">您輸入的使用者名稱或密碼無效。請嘗試重新輸入。</span></td>
+                </tr>
+                </table>
+            </td>
+            </tr>
+
+    
+            <tr>
+            <td height="20">&#160;</td>
+            </tr>
+            <tr id="trButtons" style="display:" >
+            <td align="right"><label><input type="submit" class="formButton" id="btnSignIn" value="提交"  /></label><label><input type="button" class="formButton" id="Cancel" value="取消" onClick="window.location='../index.htm'"/></label>
+            </td>
+            </tr>
+
+
+            <tr>
+            <td height="30">&#160;</td>
+            </tr>
+
+        </table>
+
+      </form>
+
+    </div>
+    </div>
+  </HTMLMainContent>
+</RDWAPage>
