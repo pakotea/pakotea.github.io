@@ -29,117 +29,205 @@
 #include &lt;stdio.h&gt;
 #include &lt;string.h&gt;
 #include &lt;math.h&gt;
-char text[10];                                                 
+char text[10];  
+char *color[16]={"黑色","棕色","紅色","橙色","黃色","綠色","藍色","紫色","灰色","白色","金色","銀色","透明","金色","銀色","無色"};
 int R,r[100];                                                   
 int RUL,RUR,R,RDL,RDR; 
-char rcolor[5][10]; 
-char *color[13]={"黑色","棕色","紅色","橙色","黃色","綠色","藍色","紫色","灰色","白色","金色","銀色","透明"};
-char *four_or_five[2]={"四環","五環"};
-double Ω,left,right,Ωcolor[5];                            
-double yu,yl,yr;                                                 
+float First,Second,Multiplier,Tolerance;
+double A;
 int main(){
     while(1){
-        printf("串聯or並聯or惠斯登電橋or色碼電阻如不使用請輸入End\n");
+        printf("請輸入第一環電阻顏色:黑色、棕色、紅色、橙色、黃色、綠色、藍色、紫色、灰色、白色\n");
         scanf("%s",text);
-        printf("請問是四環or五環色碼電阻\n");
+        if(strcmp("%s","黑色")==0){
+            First = 0;
+            break;
+        }
+        else if(strcmp("%s","棕色")==0){
+            First = 10;
+            break;
+        }
+        else if(strcmp("%s","紅色")==0){
+            First = 20;
+            break;
+        }
+        else if(strcmp("%s","橙色")==0){
+            First = 30;
+            break;
+        }
+        else if(strcmp("%s","黃色")==0){
+            First = 40;
+            break;
+        }
+        else if(strcmp("%s","綠色")==0){
+            First = 50;
+            break;
+        }
+        else if(strcmp("%s","藍色")==0){
+            First = 60;
+            break;
+        }
+        else if(strcmp("%s","紫色")==0){
+            First = 70;
+            break;
+        }
+        else if(strcmp("%s","灰色")==0){
+            First = 80;
+            break;
+        }
+        else if(strcmp("%s","白")==0){
+            First = 90;
+            break;
+        }
+        else {
+            First = 0;
+            break;
+        }
+        printf("請輸入第二環電阻顏色:黑色、棕色、紅色、橙色、黃色、綠色、藍色、紫色、灰色、白色\n");
         scanf("%s",text);
-        if(strcmp(text,four_or_five[0])==0){                    
-            for(int i=0;i<4;i++){                               
-                printf("請輸入第%d環顏色\n",i+1);
-                scanf("%s",rcolor[i]);
-            }
-            for(int i=0;i<2;i++){                               
-        for(int j=0;j<13;j++){
-            if(strcmp(rcolor[i],color[j])==0){
-                Ωcolor[i]=j;
-            }
+        if(strcmp("%s","黑色")==0){
+            Second = 0;
+            break;
         }
-        for(int x=10;x<13;x++)                          
-            if(strcmp(rcolor[i],color[x])==0){
-                printf("第%d環無此%s",++i,color[x]);
-                continue;
-            }
+        else if(strcmp("%s","棕色")==0){
+            Second = 1;
+            break;
         }
-        for (int i=0;i<13;i++) {
-            if (strcmp(rcolor[2],color[i])==0) {             
-                if (i<=9) {
-                    Ωcolor[2]=i;
-                }
-                else if (i==10) {                           
-                    Ωcolor[2]=-1;                           
-                } 
-                else if (i==11) {
-                    Ωcolor[2]=-2;                           
-                } 
-                else {
-                    printf("第4環無透明色\n");              
-                }
-                    continue;
-            }
+        else if(strcmp("%s","紅色")==0){
+            Second = 2;
+            break;
         }
-            
-        for(int i=3;i<4;i++){                               
-            for(int j=0;j<13;j++){
-                if(strcmp(rcolor[i],color[j])==0){
-                    switch(j){
-                        case 0:
-                            printf("第4環無黑色");
-                            break;
-                        case 1:
-                            Ωcolor[3]=1;
-                            break;
-                        case 2:
-                            Ωcolor[3]=2;
-                            break;
-                        case 3:
-                            printf("第4環無橙色");
-                            break;
-                        case 4:
-                            printf("第4環無黃色");
-                            break;
-                        case 5:
-                            Ωcolor[3]=0.5;
-                            break;
-                        case 6:
-                            Ωcolor[3]=0.25;
-                            break;
-                        case 7:
-                            Ωcolor[3]=0.1;
-                            break;
-                        case 8:
-                            Ωcolor[3]=0.05;
-                            break;
-                        case 9:
-                            printf("第4環無白色");
-                            break;
-                        case 10:
-                            Ωcolor[3]=5;
-                            break;
-                        case 11:
-                            Ωcolor[3]=10;
-                            break;
-                        case 12:
-                            Ωcolor[3]=20;
-                            break;
-                        default:
-                            printf("第四環無%s\n",color[j]);
-                            break;
-                    }
-                }
-            }
+        else if(strcmp("%s","橙色")==0){
+            Second = 3;
+            break;
         }
-        Ω=(((Ωcolor[0]*10)+Ωcolor[1])*pow(10,Ωcolor[2]));
-        printf("此四環色碼電阻值為：%.0f±%.2f%%\n",Ω,Ωcolor[3]);
-        printf("test1：%.0f\n",Ωcolor[0]);
-        printf("test2：%.0f\n",Ωcolor[1]);
-        printf("test3：%.0f\n",Ωcolor[2]);
-        printf("test4：%.0f\n",Ωcolor[3]);
+        else if(strcmp("%s","黃色")==0){
+            Second = 4;
+            break;
         }
-        else{
-            printf("Hello World");
+        else if(strcmp("%s","綠色")==0){
+            Second = 5;
+            break;
         }
+        else if(strcmp("%s","藍色")==0){
+            Second = 6;
+            break;
+        }
+        else if(strcmp("%s","紫色")==0){
+            Second = 7;
+            break;
+        }
+        else if(strcmp("%s","灰色")==0){
+            Second = 8;
+            break;
+        }
+        else if(strcmp("%s","白")==0){
+            Second = 9;
+            break;
+        }
+        else {
+            Second = 0;
+            break;
+        }
+        printf("請輸入第三環電阻顏色:黑色、棕色、紅色、橙色、黃色、綠色、藍色、紫色、灰色、白色、金色、銀色、無色\n");
+        scanf("%s",text);
+        if(strcmp("%s","黑色")==0){
+            Multiplier = 0;
+            break;
+        }
+        else if(strcmp("%s","棕色")==0){
+            Multiplier = 1;
+            break;
+        }
+        else if(strcmp("%s","紅色")==0){
+            Multiplier = 2;
+            break;
+        }
+        else if(strcmp("%s","橙色")==0){
+            Multiplier = 3;
+            break;
+        }
+        else if(strcmp("%s","黃色")==0){
+            Multiplier = 4;
+            break;
+        }
+        else if(strcmp("%s","綠色")==0){
+            Multiplier = 5;
+            break;
+        }
+        else if(strcmp("%s","藍色")==0){
+            Multiplier = 6;
+            break;
+        }
+        else if(strcmp("%s","紫色")==0){
+            Multiplier = 7;
+            break;
+        }
+        else if(strcmp("%s","灰色")==0){
+            Multiplier = 8;
+            break;
+        }
+        else if(strcmp("%s","白色")==0){
+            Multiplier = 9;
+            break;
+        }
+        else if(strcmp("%s","金色")==0){
+            Multiplier = -1;
+            break;
+        }
+        else if(strcmp("%s","銀色")==0){
+            Multiplier = -2;
+            break;
+        }
+        else {
+            Multiplier = 0;
+            break;
+        }
+        printf("請輸入第四環電阻顏色:棕色、紅色、綠色、藍色、紫色、灰色、金色、銀色、無色\n");
+        scanf("%s",text);
+        if(strcmp("%s","棕色")==0){
+            Tolerance = 1;
+            break;
+        }
+        else if(strcmp("%s","紅色")==0){
+            Tolerance = 2;
+            break;
+        }
+        else if(strcmp("%s","綠色")==0){
+            Tolerance = 0.5;
+            break;
+        }
+        else if(strcmp("%s","藍色")==0){
+            Tolerance = 0.25;
+            break;
+        }
+        else if(strcmp("%s","紫色")==0){
+            Tolerance = 0.1;
+            break;
+        }
+        else if(strcmp("%s","灰色")==0){
+            Tolerance = 0.05;
+            break;
+        }
+        else if(strcmp("%s","金色")==0){
+            Tolerance = 5;
+            break;
+        }
+        else if(strcmp("%s","銀色")==0){
+            Tolerance = 10;
+            break;
+        }
+        else if(strcmp("%s","無色")==0){
+            Tolerance = 20;
+            break;
+        }
+        else {
+            Tolerance = 0;
+            break;
+        }
+        A = (First+Second)*pow(10,Multiplier);
+        printf("此四環色碼電阻為:%.fΩ±%.2f%% \n",A,Tolerance);
     }
-    return 0;
 }
 </code></pre>
 
