@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CurveLock 技術研究展示</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.5;
+            color: #333;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .paper-container {
+            background-color: white;
+            padding: 50px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            font-size: 24pt;
+            margin-bottom: 10px;
+        }
+        .authors {
+            text-align: center;
+            font-size: 11pt;
+            margin-bottom: 30px;
+        }
+        .abstract-box {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 25px;
+            background-color: #fafafa;
+        }
+        .abstract-title {
+            font-weight: bold;
+            font-style: italic;
+        }
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            text-align: justify;
+        }
+        h2 {
+            font-variant: small-caps;
+            border-bottom: 1px solid #eee;
+            color: #0056b3;
+            grid-column: span 2;
+            text-align: center;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<div class="paper-container">
+    <h1>CurveLock: 探索現代勒索軟體中的橢圓曲線實作</h1>
+    
+    <div class="authors">
+        Swayam Tejas Padhy<sup>1</sup>, P. B. Shanthi<sup>2</sup><br>
+        <i>發表於 IEEE ACCESS, 2025</i>
+    </div>
+
+    <div class="abstract-box">
+        <span class="abstract-title">摘要—</span> 
+        本研究介紹了 CurveLock，這是一個與 LockBit 等傳統勒索軟體架構迥異的新型框架 [cite: 11]。
+        CurveLock 捨棄了 RSA-AES 的固定會話金鑰模式，改採「以檔案為中心」的 ECC-AES 混合加密方案 [cite: 12, 38]。
+        此外，它還結合了隱寫術、API 錘擊與 NTDLL 取消掛鉤等技術，顯著提升了規避檢測的能力 [cite: 14, 15]。
+    </div>
+
+    <div class="main-content">
+        <h2>I. 核心技術革新</h2>
+        <p>
+            <span class="highlight">檔案級加密：</span> 
+            與傳統勒索軟體不同，CurveLock 為受感染系統中的「每一個檔案」生成唯一的臨時 ECC 金鑰對 [cite: 12, 521]。
+            這種顆粒度極細的金鑰管理策略，使防禦者試圖針對單一檔案進行逆向還原變得完全不切實際 [cite: 58, 522]。
+        </p>
+        
+        <p>
+            <span class="highlight">ECC 效能優勢：</span> 
+            利用橢圓曲線密碼學的高運算效率，CurveLock 特別適合在資源受限的物聯網 (IoT) 環境中運行 [cite: 13, 523]。
+        </p>
+
+        <h2>II. 進階規避機制</h2>
+        <p>
+            <span class="highlight">API 錘擊 (API Hammering)：</span> 
+            透過在背景執行大量無害的系統調用，人為製造延遲，迫使自動化沙箱環境因分析逾時而失效 [cite: 80, 216]。
+        </p>
+
+        <p>
+            <span class="highlight">隱寫術交付：</span> 
+            將加密的 Shellcode 隱藏在良性 PNG 圖片的數據塊中，維持低熵值，從而繞過傳統的啟發式掃描 [cite: 14, 42]。
+        </p>
+
+        <h2>III. 研究結論</h2>
+        <p>
+            CurveLock 的成功實作證明了現代勒索軟體正在朝向更高效率與更隱蔽的技術代際演進 [cite: 383, 423]。
+            這提醒了安全界必須從傳統的特徵比對轉向基於行為分析的「零信任」防禦架構 [cite: 391]。
+        </p>
+    </div>
+</div>
+
+<footer>
+    © 2026 基於 IEEE Access 論文數據生成之技術網頁
+</footer>
+
+</body>
+</html>
