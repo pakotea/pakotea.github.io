@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南光高中｜丙級硬體裝修模擬考場資源網</title>
+    <style>
+        /* 全域設定 */
+        :root {
+            --primary-color: #2c3e50;
+            --link-color: #3498db;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --alert-bg: #fff3cd;
+            --alert-border: #ffeeba;
+            --alert-text: #856404;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'Microsoft JhengHei', sans-serif;
+            background-color: var(--bg-color);
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* 標題區塊 */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        /* 警告/須知區塊 */
+        .alert-box {
+            background-color: var(--alert-bg);
+            color: var(--alert-text);
+            border-left: 6px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .alert-box h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .alert-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        /* 網格卡片佈局 */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            font-size: 1.2em;
+            color: var(--primary-color);
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* 列表與連結設定 */
+        ul.resource-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.resource-list li {
+            margin-bottom: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: bold;
+            background: #eef7fc;
+            padding: 4px 10px;
+            border-radius: 5px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            background: var(--link-color);
+            color: white;
+            text-decoration: none;
+        }
+
+        .serial-key {
+            font-family: monospace;
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #d35400;
+        }
+
+        /* 頁尾 */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #777;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🖥️ 南光高中｜丙級硬體裝修模擬考場資源網</h1>
+        <p>檢定測試用檔案下載與操作指引中心</p>
+    </header>
+
+    <div class="alert-box">
+        <h3>⚠️ 考生重要須知</h3>
+        <ul>
+            <li><strong>隨身碟規範：</strong>在進行 Ubuntu、VirtualBox 和 Office 檢定時，請務必使用 USB 隨身碟將檔案傳入電腦中。</li>
+            <li><strong>網路環境：</strong>下載時 Server 可能會比較慢，請耐心等待。FTP 如果不能用，請把 Server 重開。</li>
+            <li><strong>螢幕設定：</strong>最佳解析度為 1920X1080，系統顯示和網頁比例請設為 100%（舊螢幕請調整為 75%）。</li>
+            <li><strong>輔助連結：</strong><a href="https://pakotea.github.io/web/RD Web/index.htm" style="background:transparent; padding:0;">FTP 改密碼連結 (Beta)</a> ｜ <a href="https://pakotea.github.io/web/FTPHelp/index.htm" style="background:transparent; padding:0;">FTP 已知問題</a></li>
+        </ul>
+    </div>
+
+    <div class="grid-container">
+        <div class="card">
+            <h2>📁 1. 檔案傳輸與壓縮工具</h2>
+            <ul class="resource-list">
+                <li><strong>FTP：</strong> <a href="downloads/FileZilla_Client_(64bit)_v3.14.1.txt">FileZilla (64bit)</a> <a href="downloads/LeechFTP.txt">LeechFTP</a></li>
+                <li><strong>壓縮：</strong> <a href="downloads/wrar311tc.txt">WinRAR</a> <a href="downloads/7z1509-x64.txt">7-Zip</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>🔤 2. 檢定指定字型</h2>
+            <ul class="resource-list">
+                <li><a href="downloads/中國龍海報體.txt">中國龍海報體</a></li>
+                <li><a href="downloads/文鼎PL中楷.txt">文鼎PL中楷</a></li>
+                <li><a href="downloads/文鼎PL細上海宋.txt">文鼎PL細上海宋</a></li>
+                <li><a href="downloads/華康中黑體.txt">華康中黑體</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>📊 3. Office 辦公室軟體</h2>
+            <ul class="resource-list">
+                <li>
+                    <a href="downloads/office2003.txt">Office 2003</a> 
+                    <br><span class="serial-key">序號: RRCF8-KX3W3-68WDP-H9JCV-24G7M</span>
+                </li>
+                <li>
+                    <a href="https://drive.google.com/file/d/1PoA_tIy96FjonjvkGrtLrIRTqsnoGrsH/view?usp=sharing" target="_blank">Office 2010</a> 
+                    <br><span class="serial-key">序號: C6YV2-6CKK8-VF7JB-JJCFM-HXJ2D</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>🐧 4. 虛擬機與作業系統 (Linux)</h2>
+            <ul class="resource-list">
+                <li><strong>VirtualBox：</strong> <a href="downloads/VirtualBox-6.1.8-137981-Win.txt">v6.1.8</a> <a href="downloads/VirtualBox-7.0.18-162988-Win.txt">v7.0.18</a></li>
+                <li><strong>Ubuntu：</strong> <a href="downloads/ubuntu-20.04.1-desktop-amd64.txt">20.04</a> <a href="downloads/ubuntu-18.04.6-desktop-amd64.txt">18.04</a></li>
+                <li><strong>Fedora：</strong> <a href="downloads/Fedora 33.txt">Fedora 33</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>🔧 5. 顯示卡驅動程式</h2>
+            <ul class="resource-list">
+                <li><strong>內顯：</strong> <a href="downloads/gfx_win_101.2115.txt">Intel UHD630</a></li>
+                <li><strong>獨顯：</strong> <a href="downloads/474.82-desktop-win10-win11-64bit-international-dch-whql.txt">GT710</a> <a href="downloads/342.01-desktop-win10-64bit-international.txt">GT210</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>📚 6. 應考指引與筆記</h2>
+            <ul class="resource-list">
+                <li><a href="downloads/windows流程 (高苑).txt">Windows 安裝流程</a></li>
+                <li><a href="downloads/安裝ubuntu 簡易流程 (高苑).txt">Ubuntu 簡易安裝流程</a></li>
+                <li><a href="downloads/總流程 (高苑).txt">硬體裝修總流程</a></li>
+                <li><a href="downloads/120003B12.txt">丙級試題官方說明</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>🎮 考場彩蛋：<a href="https://pakotea.github.io/web/game/index.htm" style="background:transparent; padding:0;">Demo 版測試連結</a></p>
+    </footer>
+</div>
+
+</body>
+</html>
